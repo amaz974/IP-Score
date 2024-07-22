@@ -1,4 +1,4 @@
-# IP Score 🚀
+# IP Score 🥇
 
 ## 🎉 Description
 
@@ -14,7 +14,7 @@ Il vous suffit d'ajouter les IPs au fichiers list.txt ou d'importer votre fichie
 
 ## 🚀 Installation
 
-1. **Clonez le dépôt ou téléchargez le script :**
+**Clonez le dépôt ou téléchargez le script :**
 
    ```bash
    git clone https://github.com/amaz974/IP-Score.git
@@ -39,7 +39,7 @@ Options
 -c, --csv : Sauvegarder les résultats au format CSV.
 -h, --help : Afficher un message d'aide avec les options disponibles.
 ```
-## Exemples
+## 🛠️ Exemples
 Pour exécuter le script avec un fichier d'entrée personnalisé et sauvegarder les résultats en CSV :
 
 ```
@@ -64,6 +64,7 @@ Utilisez votre propre clé API pour éviter les restrictions.
 
 ## 👤 Auteur
 Auteur : amaz974
+
 Version : 1.0 - Date : 2024-07-19
 
 ## 📜 Licence
