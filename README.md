@@ -2,7 +2,7 @@
 
 ## 🎉 Description
 
-Bienvenue dans le script IP Score ! Ce script Python vous permet de vérifier les scores de malveillance des adresses IP en utilisant l'API AbuseIPDB. Que vous soyez un développeur, un administrateur réseau, ou simplement curieux, ce script vous offre une manière rapide et simple de surveiller les adresses IP.
+Bienvenue dans IP Score ! Ce script Python vous permet de vérifier les scores de malveillance des adresses IP en utilisant l'API AbuseIPDB. Que vous soyez un développeur, un administrateur réseau, ou simplement curieux, ce script vous offre une manière rapide et simple de surveiller les adresses IP.
 
 Il vous suffit d'ajouter les IPs au fichiers list.txt ou d'importer votre fichier avec l'option -i.
 
@@ -11,6 +11,7 @@ Il vous suffit d'ajouter les IPs au fichiers list.txt ou d'importer votre fichie
 - **Lecture des adresses IP** depuis un fichier (par defaut list.txt).
 - **Filtrage des adresses IP privées** pour se concentrer uniquement sur les adresses IP publiques.
 - **Affichage des résultats** dans le terminal ou sauvegarde dans un fichier Excel ou CSV (Le résultat se trouvera dans le dossier : "Excel").
+- **Option de filtrage** pour afficher uniquement les adresses IP ayant un score de malveillance supérieur ou égal à une valeur spécifiée.
 
 ## 🚀 Installation
 
@@ -33,11 +34,12 @@ Exécutez le script avec Python et choisissez vos options préférées :
 ```bash
 python ipscore.py [OPTIONS]
 Options
+-h, --help : Afficher un message d'aide avec les options disponibles.
 -i, --input : Chemin vers le fichier contenant les adresses IP (par défaut : list.txt).
 -e, --excel : Sauvegarder les résultats au format Excel.
 -t, --terminal : Afficher les résultats dans le terminal.
 -c, --csv : Sauvegarder les résultats au format CSV.
--h, --help : Afficher un message d'aide avec les options disponibles.
+-s, --score : Afficher uniquement les IPs ayant un score de malveillance supérieur ou égal à cette valeur.
 ```
 ## 🛠️ Exemples
 Pour exécuter le script avec un fichier d'entrée personnalisé et sauvegarder les résultats en CSV :
@@ -55,6 +57,12 @@ Pour obtenir de l'aide sur les options disponibles :
 ```
 python ipscore.py -h
 ```
+Pour filtrer les IPs avec un score de malveillance supérieur ou égal à une valeur spécifiée (par exemple 10) :
+
+```
+python ipscore.py -s 10
+```
+
 ## 🔑 Clé API
 Le script utilise une clé API pour accéder à l'API AbuseIPDB. La clé API est incluse dans le script à titre d'exemple. Pour une utilisation sécurisée, remplacez-la par votre propre clé API obtenue depuis AbuseIPDB. 
 
