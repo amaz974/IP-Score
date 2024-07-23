@@ -34,7 +34,7 @@ Exécutez le script avec Python et choisissez vos options préférées :
 ```bash
 python ipscore.py [OPTIONS]
 Options
--h, --help : Afficher un message d'aide avec les options disponibles.
+-h, --help : Afficher une aide avec les options disponibles.
 -i, --input : Chemin vers le fichier contenant les adresses IP (par défaut : list.txt).
 -e, --excel : Sauvegarder les résultats au format Excel.
 -t, --terminal : Afficher les résultats dans le terminal.
