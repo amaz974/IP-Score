@@ -9,7 +9,7 @@ Il vous suffit d'ajouter les IPs au fichiers list.txt ou d'importer votre fichie
 ```java
 Conseil : Utiliser VScode et son terminal pour manipuler le projet
 ```
-## 🌟 Fonctionnalités
+## 🌟 Fonctionnalités 
 
 - **Lecture des adresses IP** depuis un fichier (par defaut list.txt).
 - **Filtrage des adresses IP privées** pour se concentrer uniquement sur les adresses IP publiques.
