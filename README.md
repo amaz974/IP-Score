@@ -6,6 +6,9 @@ Bienvenue dans IP Score ! Ce script Python vous permet de vérifier les scores d
 
 Il vous suffit d'ajouter les IPs au fichiers list.txt ou d'importer votre fichier avec l'option -i.
 
+```java
+Conseil : Utiliser VScode et son terminal pour manipuler le projet
+```
 ## 🌟 Fonctionnalités
 
 - **Lecture des adresses IP** depuis un fichier (par defaut list.txt).
