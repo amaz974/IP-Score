@@ -4,6 +4,7 @@ import ipaddress
 import os
 import argparse
 from tqdm import tqdm  # Importer tqdm pour la barre de progression
+from tabulate import tabulate  # Importer tabulate pour un joli affichage des tables
 
 def print_ascii_art():
     """ Affiche l'ASCII art en couleur. """
@@ -84,10 +85,11 @@ def main():
     parser.add_argument('-e', '--excel', action='store_true', help="Sauvegarder le résultat au format Excel.")
     parser.add_argument('-t', '--terminal', action='store_true', help="Afficher le résultat dans le terminal.")
     parser.add_argument('-c', '--csv', action='store_true', help="Sauvegarder le résultat au format CSV.")
+    parser.add_argument('-s', '--score', type=int, default=0, help="Afficher uniquement les adresses IP ayant un score de malveillance supérieur ou égal à ce nombre.")
     args = parser.parse_args()
 
     # Clé API par défaut
-    api_key = 'f7cfa0682722afb355dc0e37c07cf75508bfcd10834affab42772af971968dd914dd05dedffd92eb'
+    api_key = '7aab9f183a739028fd908060b73fce96dfe10022f53c4426b80700d9abcbbfdef8272496cd4bab1f'
 
     print_ascii_art()
 
@@ -102,9 +104,9 @@ def main():
     # Créer une barre de progression avec tqdm
     results = []
     print("Traitement des adresses IP...")
-    for ip in tqdm(public_ip_list, desc="Chargement des IPs", unit="IP"):
+    for ip in tqdm(public_ip_list, desc="\033[94mChargement des IPs\033[0m", unit="IP"):
         result = fetch_ip_info(ip, api_key)
-        if result:
+        if result and result['Score de malveillance'] >= args.score:
             results.append(result)
 
     df = pd.DataFrame(results)
@@ -114,7 +116,7 @@ def main():
     elif args.csv:
         save_to_csv(df)
     elif args.terminal:
-        print(df.to_string(index=False))
+        print(tabulate(df, headers='keys', tablefmt='pretty', showindex=False))
     else:
         output_format = input("Voulez-vous le fichier en format Excel, CSV, ou afficher dans le terminal? (tapez 'excel', 'csv', ou 'terminal'): ").strip().lower()
         if output_format == 'excel':
@@ -122,7 +124,7 @@ def main():
         elif output_format == 'csv':
             save_to_csv(df)
         elif output_format == 'terminal':
-            print(df.to_string(index=False))
+            print(tabulate(df, headers='keys', tablefmt='pretty', showindex=False))
         else:
             print("Format non reconnu. Veuillez choisir entre 'excel', 'csv', ou 'terminal'.")
 
